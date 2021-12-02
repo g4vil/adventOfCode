@@ -9,7 +9,6 @@ def list_logs(file):
 
 def count_increased(list):
     count_up = 0
-    # count_down = 0
     actual = list[0]
     
     for i in list:
