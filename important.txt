@@ -1,1 +1,5 @@
-sonar-scanner -Dsonar.projectKey=adventOfCode -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=63eaa146d470e639770e46252306f28065e591c0
+sonar-scanner 
+    -Dsonar.projectKey=adventOfCode 
+    -Dsonar.sources=. 
+    -Dsonar.host.url=http://localhost:9000 
+    -Dsonar.login=63eaa146d470e639770e46252306f28065e591c0
