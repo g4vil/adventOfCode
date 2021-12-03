@@ -22,7 +22,6 @@ def count_increased(list):
 
 def sum_thress(list):
     count_up = 0
-    count_down = 0
     sums = []    
     for i in range(0, len(list)):
         if i == len(list) - 2:
