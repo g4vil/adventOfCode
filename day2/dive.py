@@ -1,6 +1,6 @@
 FILE = "./diveLog.txt"
 
-def generateList(file):
+def generate_list(file):
     f = open(file, "r")
     logs = []
     for line in f:
@@ -28,7 +28,7 @@ def calculate_aimin(list):
     return horizontal_position * depth
     
 def run():
-    print(calculate_aimin(generateList(FILE)))
+    print(calculate_aimin(generate_list(FILE)))
 
 if __name__ == "__main__":
     run()
