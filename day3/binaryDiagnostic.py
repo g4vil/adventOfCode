@@ -1,6 +1,6 @@
 FILE = './binaryDiagnostic.txt'
 
-def binaryList(file):
+def binary_list(file):
     f = open(file, "r")
     binarys = []
     for line in f:
@@ -36,20 +36,16 @@ def minus_rep(list):
     else:
         return 0
     
-def makeDecimals(gamma, epsilon):
+def make_decimals(gamma, epsilon):
     gamma_decimal = 0
     epsilon_decimal = 0
     gamma, epsilon = gamma[::-1], epsilon[::-1]
     for i in range(len(gamma)):
-        if gamma[i] == '0':
-            pass
-        elif gamma[i] == '1':
+        if gamma[i] == '1':
             gamma_decimal += 2**i
     
     for i in range(len(epsilon)):
-        if epsilon[i] == '0':
-            pass
-        else:
+        if epsilon[i] == '1':
             epsilon_decimal += 2**i
 
     return gamma_decimal * epsilon_decimal
@@ -87,11 +83,10 @@ def promedium(list):
     gamma = str(most_rep(first)) + str(most_rep(second)) + str(most_rep(third)) + str(most_rep(fourth)) + str(most_rep(five)) + str(most_rep(six)) + str(most_rep(seven)) + str(most_rep(eigth)) + str(most_rep(nine)) + str(most_rep(ten)) + str(most_rep(eleven)) + str(most_rep(twelve))
     epsilon = str(minus_rep(first)) + str(minus_rep(second)) + str(minus_rep(third)) + str(minus_rep(fourth)) + str(minus_rep(five)) + str(minus_rep(six)) + str(minus_rep(seven)) + str(minus_rep(eigth)) + str(minus_rep(nine)) + str(minus_rep(ten)) + str(minus_rep(eleven)) + str(minus_rep(twelve))
 
-    return makeDecimals(gamma, epsilon)
+    return make_decimals(gamma, epsilon)
             
-    
 def run():
-    print(promedium(binaryList(FILE)))
+    print(promedium(binary_list(FILE)))
 
 if __name__ == '__main__':
     run()

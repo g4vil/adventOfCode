@@ -21,7 +21,6 @@ def count_increased(list):
     print("Total increases: " + str(count_up))
 
 def sum_thress(list):
-    count_up = 0
     sums = []    
     for i in range(0, len(list)):
         if i == len(list) - 2:
@@ -29,17 +28,8 @@ def sum_thress(list):
         elif i == len(list) - 1:
             sums.append(list[i])
         else:
-            sums.append(list[i] + list[i+1] + list[i+2])
+            sums.append(list[i] + list[i+1] + list[i+2])        
     
-    actual = sums[0]
-    
-    for i in sums:
-        if i > actual:
-            actual = i
-            count_up += 1
-        else:
-            actual = i
-            
     count_increased(sums)
 
 def run():
