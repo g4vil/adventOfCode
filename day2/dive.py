@@ -1,6 +1,6 @@
 FILE = "./diveLog.txt"
 
-def logsList(file):
+def generateList(file):
     f = open(file, "r")
     logs = []
     for line in f:
@@ -13,23 +13,22 @@ def logsList(file):
             
     return logs
 
-def calculate_dive(list):
-    forward, depth = 0, 0
+def calculate_aimin(list):
+    horizontal_position, depth, aim = 0, 0, 0
     for i in range(0, len(list)):
         if list[i][0] == 'forward':
-            forward += list[i][1]
+            horizontal_position += list[i][1]
+            depth += list[i][1] * aim
         elif list[i][0] == 'down':
-            depth += list[i][1]
+            aim += list[i][1]
         elif list[i][0] == 'up':
-            depth -= list[i][1]
+            aim -= list[i][1]
         else:
             continue
-        
-    dive = forward * depth
-    return dive
+    return horizontal_position * depth
     
 def run():
-    print(calculate_dive(logsList(FILE)))
+    print(calculate_aimin(generateList(FILE)))
 
 if __name__ == "__main__":
     run()
